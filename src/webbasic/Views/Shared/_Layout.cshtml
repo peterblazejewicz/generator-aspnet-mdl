@@ -16,34 +16,47 @@
         </environment>
     </head>
     <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a asp-controller="Home" asp-action="Index" class="navbar-brand">webbasic</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    </ul>
-                </div>
+        <!-- Uses a header that scrolls with the text, rather than staying
+          locked at the top -->
+        <div class="mdl-layout mdl-js-layout">
+          <header class="mdl-layout__header mdl-layout__header--scroll">
+            <div class="mdl-layout__header-row">
+              <!-- Title -->
+              <span class="mdl-layout-title"><%= namespace %></span>
+              <!-- Add spacer, to align navigation to the right -->
+              <div class="mdl-layout-spacer"></div>
+              <!-- Navigation -->
+              <nav class="mdl-navigation">
+                <a asp-controller="Home" asp-action="Index" class="mdl-navigation__link">Home</a>
+                <a asp-controller="Home" asp-action="About" class="mdl-navigation__link">About</a>
+                <a asp-controller="Home" asp-action="Contact" class="mdl-navigation__link">Contact</a>
+              </nav>
             </div>
+          </header>
+          <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title"><%= namespace %></span>
+            <nav class="mdl-navigation">
+              <a asp-controller="Home" asp-action="Index" class="mdl-navigation__link">Home</a>
+              <a asp-controller="Home" asp-action="About" class="mdl-navigation__link">About</a>
+              <a asp-controller="Home" asp-action="Contact" class="mdl-navigation__link">Contact</a>
+            </nav>
+          </div>
+          <main class="mdl-layout__content">
+            <div class="page-content">
+              @RenderBody()
+            </div>
+          </main>
+          <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer__left-section">
+              <div class="mdl-logo">&copy; 2016 - <%= namespace %></div>
+              <ul class="mdl-mini-footer__link-list">
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Home" asp-action="About">About</a></li>
+                <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+              </ul>
+            </div>
+          </footer>
         </div>
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; 2016 - webbasic</p>
-            </footer>
-        </div>
-
         <environment names="Development">
             <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
             <script src="~/js/site.js" asp-append-version="true"></script>
