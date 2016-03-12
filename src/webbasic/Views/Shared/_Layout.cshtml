@@ -15,7 +15,7 @@
             <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
         </environment>
     </head>
-    <body>
+    <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
         <!-- Uses a header that scrolls with the text, rather than staying
           locked at the top -->
         <div class="mdl-layout mdl-js-layout">
@@ -45,17 +45,18 @@
             <div class="page-content">
               @RenderBody()
             </div>
+            <footer class="mdl-mini-footer">
+              <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logo">&copy; 2016 - <%= namespace %></div>
+                <ul class="mdl-mini-footer__link-list">
+                  <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                  <li><a asp-controller="Home" asp-action="About">About</a></li>
+                  <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                </ul>
+              </div>
+            </footer>
           </main>
-          <footer class="mdl-mini-footer">
-            <div class="mdl-mini-footer__left-section">
-              <div class="mdl-logo">&copy; 2016 - <%= namespace %></div>
-              <ul class="mdl-mini-footer__link-list">
-                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                <li><a asp-controller="Home" asp-action="About">About</a></li>
-                <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-              </ul>
-            </div>
-          </footer>
+
         </div>
         <environment names="Development">
             <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>

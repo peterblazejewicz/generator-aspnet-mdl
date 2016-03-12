@@ -1,7 +1,12 @@
+.mdl-layout__container {
+  min-height: 100vh;
+}
+
 .page-content {
   max-width: 1044px;
   margin-left: auto;
   margin-right: auto;
+
 }
 
 .mdl-card__supporting-text {
