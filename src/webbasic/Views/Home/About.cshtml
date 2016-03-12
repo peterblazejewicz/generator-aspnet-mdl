@@ -1,7 +1,12 @@
 @{
     ViewData["Title"] = "About";
 }
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
+<div class="mdl-grid">
+  <div class="mdl-cell--12-col">
+    <h2 class="mdl-typography--display-1">@ViewData["Title"].</h2>
+    <h3 class="mdl-typography--headline">@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
+    <p class="mdl-typography--body-1">Use this area to provide additional information.</p>
+
+  </div>
+</div>
