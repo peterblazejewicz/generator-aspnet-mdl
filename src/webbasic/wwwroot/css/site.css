@@ -1,0 +1,13 @@
+.page-content {
+  max-width: 1044px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mdl-card__supporting-text {
+  flex-grow: 1;
+}
+
+a {
+  color: #3F51B5
+}
