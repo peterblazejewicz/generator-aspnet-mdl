@@ -19,8 +19,28 @@ a {
     color: #3F51B5
 }
 
-/* auto resize text in cards to take all vertical space */
-
-.mld-card--home .mdl-card__supporting-text {
-    flex-grow: 1;
+.mdl-layout__drawer .mdl-layout-title {
+  background: #3F51B5;
+  padding-left: 24px;
 }
+/* auto resize text in cards to take all vertical space */
+.mdl-card--home > .mdl-card__title,
+.mdl-card--home > .mdl-card__supporting-text,
+.mdl-card--home > .mdl-card__actions,
+.mdl-card--home > .mdl-card__actions > .mdl-button {
+  color: #fff;
+}
+.mdl-card--home > .mdl-card__title {
+  align-self: flex-start;
+  flex-grow: 1;
+}
+.mdl-card--home .mdl-card__title-text {
+  align-self: flex-start;
+}
+.mdl-card--home .mdl-card--border {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.mdl-card--home .mdl-card__supporting-text {
+    align-self: flex-start;
+}
+
