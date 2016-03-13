@@ -16,31 +16,44 @@ body {
 /* the links in default MDL template/theme override */
 
 a {
-    color: #3F51B5
+    color: rgb(63, 81, 181);
 }
 
-.mdl-layout__drawer .mdl-layout-title {
-  background: #3F51B5;
-  padding-left: 24px;
+/* extension to add error color to default MDL theme */
+
+.mdl-color-text--error {
+    color: rgb(222, 50, 38);
 }
+
+/* give a background color to drawer title */
+
+.mdl-layout__drawer .mdl-layout-title {
+    background: rgb(63, 81, 181);
+    padding-left: 24px;
+}
+
 /* auto resize text in cards to take all vertical space */
+
 .mdl-card--home > .mdl-card__title,
 .mdl-card--home > .mdl-card__supporting-text,
 .mdl-card--home > .mdl-card__actions,
 .mdl-card--home > .mdl-card__actions > .mdl-button {
-  color: #fff;
+    color: rgb(255, 255, 255);
 }
+
 .mdl-card--home > .mdl-card__title {
-  align-self: flex-start;
-  flex-grow: 1;
+    align-self: flex-start;
+    flex-grow: 1;
 }
+
 .mdl-card--home .mdl-card__title-text {
-  align-self: flex-start;
-}
-.mdl-card--home .mdl-card--border {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-.mdl-card--home .mdl-card__supporting-text {
     align-self: flex-start;
 }
 
+.mdl-card--home .mdl-card--border {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mdl-card--home .mdl-card__supporting-text {
+    align-self: flex-start;
+}
