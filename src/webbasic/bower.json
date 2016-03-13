@@ -2,6 +2,9 @@
   "name": "webbasic",
   "private": true,
   "dependencies": {
-    "material-design-lite": "1.1.2"
+    "material-design-lite": "1.1.2",
+    "jquery": "2.1.4",
+    "jquery-validation": "1.14.0",
+    "jquery-validation-unobtrusive": "3.2.4"
   }
 }
