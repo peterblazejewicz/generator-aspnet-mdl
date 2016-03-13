@@ -36,15 +36,19 @@
         <link rel="canonical" href="http://www.example.com/">
         -->
         <environment names="Development">
-            <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" />
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
             <link rel="stylesheet" href="~/lib/material-design-lite/material.css" />
             <link rel="stylesheet" href="~/css/site.css" />
         </environment>
         <environment names="Staging,Production">
-            <link href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" />
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-            <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css" />
+            <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css"
+              asp-fallback-href="~/lib/material-design-lite/material.min.css"
+              asp-fallback-test-class="invisible"
+              asp-fallback-test-property="visibility"
+              asp-fallback-test-value="hidden" />
             <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
         </environment>
     </head>
@@ -91,11 +95,13 @@
           </main>
         </div>
         <environment names="Development">
-            <script defer src="~/lib/material-design-lite/material.js"></script>
-            <script src="~/js/site.js" asp-append-version="true"></script>
+            <script src="~/lib/material-design-lite/material.js"></script>
+            <script src="~/js/site.js"></script>
         </environment>
         <environment names="Staging,Production">
-            <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+            <script src="https://code.getmdl.io/1.1.2/material.min.js"
+              asp-fallback-src="~/lib/material-design-lite/material.js"
+              asp-fallback-test="window.MaterialButton"></script>
             <script src="~/js/site.min.js" asp-append-version="true"></script>
         </environment>
         @RenderSection("scripts", required: false)

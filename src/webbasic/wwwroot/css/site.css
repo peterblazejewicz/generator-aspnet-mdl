@@ -1,18 +1,26 @@
-.mdl-layout__container {
-  min-height: 100vh;
+/* MDL templates font family */
+
+html,
+body {
+    font-family: 'Roboto', 'Helvetica', sans-serif;
 }
+
+/* MDL does not have max width for desktop */
 
 .page-content {
-  max-width: 1044px;
-  margin-left: auto;
-  margin-right: auto;
-
+    max-width: 1044px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.mdl-card__supporting-text {
-  flex-grow: 1;
-}
+/* the links in default MDL template/theme override */
 
 a {
-  color: #3F51B5
+    color: #3F51B5
+}
+
+/* auto resize text in cards to take all vertical space */
+
+.mdl-card__supporting-text {
+    flex-grow: 1;
 }
