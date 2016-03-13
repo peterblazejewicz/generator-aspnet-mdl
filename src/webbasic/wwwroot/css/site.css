@@ -21,6 +21,6 @@ a {
 
 /* auto resize text in cards to take all vertical space */
 
-.mdl-card__supporting-text {
+.mld-card--home .mdl-card__supporting-text {
     flex-grow: 1;
 }
