@@ -19,6 +19,20 @@ npm install
 bower install
 ```
 
+## Screenshots
+
+- Desktop View
+
+![Desktop view](./assets/20160313150115.jpg)
+
+- Tablet View
+
+![Tablet View](./assets/20160313145920.jpg)
+
+- Mobile View
+
+![Phone View](./assets/20160313150041.jpg)
+
 ## Author
 
 @peterblazejewicz
