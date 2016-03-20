@@ -54,6 +54,7 @@
                 <a asp-controller="Home" asp-action="Index" class="mdl-navigation__link">Home</a>
                 <a asp-controller="Home" asp-action="About" class="mdl-navigation__link">About</a>
                 <a asp-controller="Home" asp-action="Contact" class="mdl-navigation__link">Contact</a>
+                @await Html.PartialAsync("_LoginPartial")
               </nav>
             </div>
           </header>
@@ -63,6 +64,7 @@
               <a asp-controller="Home" asp-action="Index" class="mdl-navigation__link">Home</a>
               <a asp-controller="Home" asp-action="About" class="mdl-navigation__link">About</a>
               <a asp-controller="Home" asp-action="Contact" class="mdl-navigation__link">Contact</a>
+              @await Html.PartialAsync("_LoginPartial")
             </nav>
           </div>
           <main class="mdl-layout__content">
