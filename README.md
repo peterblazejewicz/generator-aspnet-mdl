@@ -40,6 +40,14 @@ bower install
 
 ## Screenshots
 
+- iPad View
+
+![Desktop view](./assets/20160320181656.jpg)
+
+- iPhone View
+
+![Desktop view](./assets/20160320181608.jpg)
+
 - Desktop View
 
 ![Desktop view](./assets/20160313150115.jpg)
