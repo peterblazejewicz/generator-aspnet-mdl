@@ -1,68 +1,96 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+         <meta name="description" content="Desription of @ViewData["Title"] - <%= namespace %>">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"] - WebApplication</title>
-
+        <title>@ViewData["Title"] - <%= namespace %></title>
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="icon" sizes="192x192" href="~/images/android-desktop.png">
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+        <link rel="apple-touch-icon-precomposed" href="~/images/ios-desktop.png">
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="~/images/touch/ms-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#3F51B5">
+        <link rel="shortcut icon" href="~/images/favicon.png">
+        <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+        <!--
+        <link rel="canonical" href="http://www.example.com/">
+        -->
         <environment names="Development">
-            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+            <link rel="stylesheet" href="~/lib/material-design-lite/material.css" />
             <link rel="stylesheet" href="~/css/site.css" />
         </environment>
         <environment names="Staging,Production">
-            <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css"
-                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+            <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.min.css"
+              asp-fallback-href="~/lib/material-design-lite/material.min.css"
+              asp-fallback-test-class="invisible"
+              asp-fallback-test-property="visibility"
+              asp-fallback-test-value="hidden" />
             <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
         </environment>
     </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a asp-controller="Home" asp-action="Index" class="navbar-brand">WebApplication</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    </ul>
-                    @await Html.PartialAsync("_LoginPartial")
-                </div>
+    <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+        <!-- Uses a header that scrolls with the text, rather than staying
+          locked at the top -->
+        <div class="mdl-layout mdl-js-layout">
+          <header class="mdl-layout__header mdl-layout__header--scroll">
+            <div class="mdl-layout__header-row">
+              <!-- Title -->
+              <span class="mdl-layout-title"><%= namespace %></span>
+              <!-- Add spacer, to align navigation to the right -->
+              <div class="mdl-layout-spacer"></div>
+              <!-- Navigation -->
+              <nav class="mdl-navigation">
+                <a asp-controller="Home" asp-action="Index" class="mdl-navigation__link">Home</a>
+                <a asp-controller="Home" asp-action="About" class="mdl-navigation__link">About</a>
+                <a asp-controller="Home" asp-action="Contact" class="mdl-navigation__link">Contact</a>
+              </nav>
             </div>
-        </div>
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; 2016 - WebApplication</p>
+          </header>
+          <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title mdl-color-text--white"><%= namespace %></span>
+            <nav class="mdl-navigation">
+              <a asp-controller="Home" asp-action="Index" class="mdl-navigation__link">Home</a>
+              <a asp-controller="Home" asp-action="About" class="mdl-navigation__link">About</a>
+              <a asp-controller="Home" asp-action="Contact" class="mdl-navigation__link">Contact</a>
+            </nav>
+          </div>
+          <main class="mdl-layout__content">
+            <div class="page-content">
+              @RenderBody()
+            </div>
+            <footer class="mdl-mini-footer">
+              <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logo">&copy; 2016 - <%= namespace %></div>
+                <ul class="mdl-mini-footer__link-list">
+                  <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                  <li><a asp-controller="Home" asp-action="About">About</a></li>
+                  <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                </ul>
+              </div>
             </footer>
+          </main>
         </div>
-
         <environment names="Development">
-            <script src="~/lib/jquery/dist/jquery.js"></script>
-            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="~/lib/material-design-lite/material.js"></script>
             <script src="~/js/site.js"></script>
         </environment>
         <environment names="Staging,Production">
-            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
-                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                    asp-fallback-test="window.jQuery">
-            </script>
-            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js"
-                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-            </script>
+            <script src="https://code.getmdl.io/1.1.2/material.min.js"
+              asp-fallback-src="~/lib/material-design-lite/material.js"
+              asp-fallback-test="window.MaterialButton"></script>
             <script src="~/js/site.min.js" asp-append-version="true"></script>
         </environment>
-
         @RenderSection("scripts", required: false)
     </body>
 </html>
