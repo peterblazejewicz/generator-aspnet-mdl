@@ -2,9 +2,9 @@
 
 @if (User.IsSignedIn())
 {
-    <form asp-controller="Account" asp-action="LogOff" method="post">
+    <form asp-controller="Account" asp-action="LogOff" method="post" class="mdl-navigation">
         <a asp-controller="Manage" asp-action="Index" title="Manage" class="mdl-navigation__link">Hello @User.GetUserName()!</a>
-        <a asp-action="LogOff" role="button" type="submit" class="mdl-navigation__link">Log off</a>
+        <button type="submit" class="mdl-button mdl-js-button">Log off</button>
     </form>
 }
 else

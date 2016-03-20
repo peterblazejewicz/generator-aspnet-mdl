@@ -57,3 +57,27 @@ a {
 .mdl-card--home .mdl-card__supporting-text {
     align-self: flex-start;
 }
+
+/* MDL button in navigation should be just like link */
+.mdl-navigation .mdl-button {
+    text-transform: none;
+    font-weight: normal;
+}
+.mdl-layout__header .mdl-button {
+    color: rgb(255, 255, 255);
+    opacity: .87;
+}
+.mdl-layout__drawer .mdl-button {
+    padding: 16px 40px;
+    line-height: 24px;
+    height: auto;
+    color: rgb(117, 117, 117);
+    font-weight: normal;
+    text-align: left;
+}
+/* a navigation in a drawer cannot be multiline */
+.mdl-layout__drawer .mdl-navigation__link {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
