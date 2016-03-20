@@ -249,3 +249,5 @@ bower_compnents
 .vscode
 # EditorConfig
 .editorconfig
+# No SQLite local databases
+WebApplication.db
