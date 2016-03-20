@@ -240,3 +240,12 @@ _Pvt_Extensions
 
 # VSCode
 .vscode
+
+# NPM/Node
+node_modules
+# Bower
+bower_compnents
+#VSCode
+.vscode
+# EditorConfig
+.editorconfig
