@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 
-namespace webbasic.Controllers
+namespace WebApplicationBasic.Controllers
 {
     public class HomeController : Controller
     {
