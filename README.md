@@ -40,6 +40,10 @@ bower install
 
 ## Screenshots
 
+- Validation Support [WIP]
+
+![Desktop view](./assets/20160320225723.jpg)
+
 - iPad View
 
 ![Desktop view](./assets/20160320181656.jpg)
