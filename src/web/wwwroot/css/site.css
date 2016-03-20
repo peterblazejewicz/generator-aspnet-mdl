@@ -75,6 +75,11 @@ a {
     font-weight: normal;
     text-align: left;
 }
+@media screen and (max-width: 1024px) {
+    .mdl-layout__drawer .mdl-button {
+        padding: 16px;
+    }
+}
 /* a navigation form in a drawer */
 .mdl-layout__drawer form.mdl-navigation {
     padding-top: 0;
