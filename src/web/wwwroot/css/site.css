@@ -75,6 +75,10 @@ a {
     font-weight: normal;
     text-align: left;
 }
+/* a navigation form in a drawer */
+.mdl-layout__drawer form.mdl-navigation {
+    padding-top: 0;
+}
 /* a navigation in a drawer cannot be multiline */
 .mdl-layout__drawer .mdl-navigation__link {
     text-overflow: ellipsis;
