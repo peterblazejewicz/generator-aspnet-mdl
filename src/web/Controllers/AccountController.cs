@@ -155,6 +155,7 @@ namespace WebApplication.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> ExternalLoginCallback(string returnUrl = null)
         {
+            return View("ExternalLoginConfirmation");
             var info = await _signInManager.GetExternalLoginInfoAsync();
             if (info == null)
             {
