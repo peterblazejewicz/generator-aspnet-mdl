@@ -3,18 +3,33 @@
     ViewData["Title"] = "Send Verification Code";
 }
 
-<h2>@ViewData["Title"].</h2>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h2 class="mdl-typography--display-1">@ViewData["Title"].</h2>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet">
+        <div class="mdl-card mdl-shadow--6dp">
+            <form asp-controller="Account" asp-action="SendCode" asp-route-returnurl="@Model.ReturnUrl" method="post" role="form">
+                <input asp-for="RememberMe" type="hidden" />
+                <fieldset>
+                    <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+                        <strong>Select Two-Factor Authentication Provider:</strong>
+                    </div>
+                    <div class="mdl-card__supporting-text" style="min-height: 50px;">
+                        <div>
+                            <!-- no built-in class for select in MDL -->
+                            <select asp-for="SelectedProvider" asp-items="Model.Providers"></select>
+                        </div>
 
-<form asp-controller="Account" asp-action="SendCode" asp-route-returnurl="@Model.ReturnUrl" method="post" class="form-horizontal" role="form">
-    <input asp-for="RememberMe" type="hidden" />
-    <div class="row">
-        <div class="col-md-8">
-            Select Two-Factor Authentication Provider:
-            <select asp-for="SelectedProvider" asp-items="Model.Providers"></select>
-            <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <button type="submit" class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect mdl-button--primary">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </div>
-</form>
+</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
