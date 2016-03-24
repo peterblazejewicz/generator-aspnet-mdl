@@ -38,6 +38,10 @@ npm install
 bower install
 ```
 
+## Blockers
+
+https://github.com/google/material-design-lite/issues/854
+
 ## Screenshots
 
 - Validation Support [WIP]
