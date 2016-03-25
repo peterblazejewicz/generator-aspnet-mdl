@@ -4,51 +4,59 @@
     ViewData["Title"] = "Manage your external logins";
 }
 
-<h2>@ViewData["Title"].</h2>
-
-<p class="text-success">@ViewData["StatusMessage"]</p>
-@if (Model.CurrentLogins.Count > 0)
-{
-    <h4>Registered Logins</h4>
-    <table class="table">
-        <tbody>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h2 class="mdl-typography--display-1">@ViewData["Title"].</h2>
+        <p>@ViewData["StatusMessage"]</p>
+    </div>
+    @if (Model.CurrentLogins.Count > 0)
+    {
+        <div class="mdl-cell mdl-cell--12-col">
+            <h4>Registered Logins</h4>
+            <hr />
+            <ul class="demo-list-item mdl-list">
             @foreach (var account in Model.CurrentLogins)
             {
-                <tr>
-                    <td>@account.LoginProvider</td>
-                    <td>
-                        @if ((bool)ViewData["ShowRemoveButton"])
-                        {
-                            <form asp-controller="Manage" asp-action="RemoveLogin" method="post" class="form-horizontal" role="form">
-                                <div>
-                                    <input asp-for="@account.LoginProvider" type="hidden" />
-                                    <input asp-for="@account.ProviderKey" type="hidden" />
-                                    <input type="submit" class="btn btn-default" value="Remove" title="Remove this @account.LoginProvider login from your account" />
-                                </div>
-                            </form>
-                        }
-                        else
-                        {
-                            @: &nbsp;
-                        }
-                    </td>
-                </tr>
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        @account.LoginProvider
+                    </span>
+                    <span class="mdl-list__item-secondary-action">
+                    @if ((bool)ViewData["ShowRemoveButton"] == false)
+                    {
+                        <form asp-controller="Manage" asp-action="RemoveLogin" method="post" role="form">
+                            <input asp-for="@account.LoginProvider" type="hidden" />
+                            <input asp-for="@account.ProviderKey" type="hidden" />
+                            <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">Remove this @account.LoginProvider login from your account</button>
+                        </form>
+                    }
+                    else
+                    {
+                        @: &nbsp;
+                    }
+                    </span>
+                </li>
             }
-        </tbody>
-    </table>
-}
-@if (Model.OtherLogins.Count > 0)
-{
-    <h4>Add another service to log in.</h4>
-    <hr />
-    <form asp-controller="Manage" asp-action="LinkLogin" method="post" class="form-horizontal" role="form">
-        <div id="socialLoginList">
-            <p>
-                @foreach (var provider in Model.OtherLogins)
-                {
-                    <button type="submit" class="btn btn-default" name="provider" value="@provider.AuthenticationScheme" title="Log in using your @provider.DisplayName account">@provider.AuthenticationScheme</button>
-                }
-            </p>
+            </ul>
         </div>
-    </form>
-}
+    }
+    @if (Model.OtherLogins.Count > 0)
+    {
+        <div class="mdl-cell mdl-cell--12-col">
+            <h4>Add another service to log in.</h4>
+            <hr />
+            <form asp-controller="Manage" asp-action="LinkLogin" method="post" class="form-horizontal" role="form">
+                <ul class="demo-list-item mdl-list">
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            @foreach (var provider in Model.OtherLogins)
+                            {
+                                <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" name="provider" value="@provider.AuthenticationScheme" title="Log in using your @provider.DisplayName account">@provider.AuthenticationScheme</button>
+                            }
+                        </span>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    }
+</div>
