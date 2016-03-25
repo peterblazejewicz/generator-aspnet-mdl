@@ -93,6 +93,11 @@ namespace WebApplication
             app.UseIdentity();
 
             // To configure external authentication please see http://go.microsoft.com/fwlink/?LinkID=532715
+            app.UseFacebookAuthentication(options =>
+            {
+                options.AppId = Configuration["Authentication:Facebook:AppId"];
+                options.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            });
 
             app.UseMvc(routes =>
             {
@@ -100,6 +105,8 @@ namespace WebApplication
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+
         }
 
         // Entry point for the application.
