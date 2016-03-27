@@ -37,6 +37,11 @@ user-secret set SID value
 user-secret set AuthToken value
 user-secret set SendNumber value
 ```
+- SendGrid:
+```
+user-secret set SendGridUser value 
+user-secret set SendGridKey value
+``` 
 
 ## Development
 
