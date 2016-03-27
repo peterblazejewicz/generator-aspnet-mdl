@@ -20,6 +20,9 @@ are used to present ASP.NET features.
 At the current version `bower.json` still uses `jQuery` and `jQuery.Validate` plugins
 as in original example coming from `aspnet/Templates`.
 
+Currently `select` tag is based on:
+[https://github.com/mebibou/mdl-selectfield](https://github.com/mebibou/mdl-selectfield)
+
 ## Requirements
 
 To run `web` template you will need to configure Twilio and Facebook as described in:
@@ -63,9 +66,7 @@ bower install
 
 ## Blockers
 
-1. Selects in MDL:
-https://github.com/google/material-design-lite/issues/854
-2. TODO: verify SendGrid crashing on OS X.
+1. TODO: verify SendGrid crashing on OS X.
 
 ## Screenshots
 
