@@ -24,9 +24,16 @@ namespace WebApplication.Services
         public Task SendSmsAsync(string number, string message)
         {
             // Plug in your SMS service here to send a text message.
+            var twilio = new Twilio.TwilioRestClient(
+                Options.SID,
+                Options.AuthToken);
+            var result = twilio.SendMessage(Options.SendNumber, number, message);
+            // Use the debug output for testing without receiving a SMS message.
+            // Remove the Debug.WriteLine(message) line after debugging.
+            System.Diagnostics.Debug.WriteLine(message);
             return Task.FromResult(0);
         }
 
-         public AuthMessageSMSSenderOptions Options { get; }
+        public AuthMessageSMSSenderOptions Options { get; }
     }
 }
