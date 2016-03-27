@@ -90,3 +90,13 @@ a {
     overflow: hidden;
     white-space: nowrap;
 }
+
+/* a button/link within bracket: [ click me ] */
+.mdl-button--bracketed::before {
+    content: "[";
+    padding-right: 0.5em;
+}
+.mdl-button--bracketed::after {
+    content: "]";
+    padding-left: 0.5em;
+}
