@@ -20,6 +20,24 @@ are used to present ASP.NET features.
 At the current version `bower.json` still uses `jQuery` and `jQuery.Validate` plugins
 as in original example coming from `aspnet/Templates`.
 
+## Requirements
+
+To run `web` template you will need to configure Twilio and Facebook as described in:
+[http://docs.asp.net/en/latest/security/authentication/index.html](http://docs.asp.net/en/latest/security/authentication/index.html)
+
+The application uses `user-secret` tool. You have to create keys for:
+- Facebook:
+```
+user-secret set Authentication:Facebook:AppId value
+user-secret set Authentication:Facebook:AppSecret value
+```
+- Twilio:
+```
+user-secret set SID value
+user-secret set AuthToken value
+user-secret set SendNumber value
+```
+
 ## Development
 
 ```
