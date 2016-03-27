@@ -29,7 +29,9 @@
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final",
     "Microsoft.AspNet.Authentication.Facebook": "1.0.0-rc1-final",
-    "Twilio": "4.7.0"
+    "Twilio": "4.7.0",
+    "SendGrid": "6.3.4",
+    "EntityFramework.Sqlite.Design": "7.0.0-rc1-final"
   },
   "commands": {
     "web": "Microsoft.AspNet.Server.Kestrel",
