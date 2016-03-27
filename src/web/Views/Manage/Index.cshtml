@@ -3,72 +3,73 @@
     ViewData["Title"] = "Manage your account";
 }
 
-<h2>@ViewData["Title"].</h2>
-<p class="text-success">@ViewData["StatusMessage"]</p>
-<div>
-    <h4>Change your account settings</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>Password:</dt>
-        <dd>
-            [
-            @if (Model.HasPassword)
-            {
-                 <text>[&nbsp;&nbsp;<a asp-controller="Manage" asp-action="ChangePassword">Change</a>&nbsp;&nbsp;]</text>
-            }
-            else
-            {
-                <text>[&nbsp;&nbsp;<a asp-controller="Manage" asp-action="SetPassword">Create</a>&nbsp;&nbsp;]</text>
-            }
-            ]
-        </dd>
-        <dt>External Logins:</dt>
-        <dd>
-
-            @Model.Logins.Count [&nbsp;&nbsp;<a asp-controller="Manage" asp-action="ManageLogins">Manage</a>&nbsp;&nbsp;]
-        </dd>
-
-
-        <dt>Phone Number:</dt>
-        <dd>
-            <p>
-                Phone Numbers can used as a second factor of verification in two-factor authentication.
-                See <a href="http://go.microsoft.com/fwlink/?LinkID=532713">this article</a>
-                for details on setting up this ASP.NET application to support two-factor authentication using SMS.
-            </p>
-            @(Model.PhoneNumber ?? "None")
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h2 class="mdl-typography--display-1">@ViewData["Title"].</h2>
+        <p class="text-success">@ViewData["StatusMessage"]</p>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3 class="mdl-typography--title">Change your account settings</h3>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>Password:</dt>
+            <dd>
+                [
+                @if (Model.HasPassword)
+                {
+                    <text>[<a asp-controller="Manage" asp-action="ChangePassword" class="mdl-button mdl-js-button">Change</a>]</text>
+                }
+                else
+                {
+                    <text>[<a role="button" asp-controller="Manage" asp-action="SetPassword" class="mdl-button mdl-js-button">Create</a>]</text>
+                }
+                ]
+            </dd>
+            <dt>External Logins:</dt>
+            <dd>
+                @Model.Logins.Count [<a role="button" asp-controller="Manage" asp-action="ManageLogins" class="mdl-button mdl-js-button">Manage</a>]
+            </dd>
+            <dt>Phone Number:</dt>
+            <dd>
+                <p>
+                    Phone Numbers can used as a second factor of verification in two-factor authentication.
+                    See <a href="http://go.microsoft.com/fwlink/?LinkID=532713">this article</a>
+                    for details on setting up this ASP.NET application to support two-factor authentication using SMS.
+                </p>
+                @(Model.PhoneNumber ?? "None")
                 @if (Model.PhoneNumber != null)
                 {
                     <br />
-                    <text>[&nbsp;&nbsp;<a asp-controller="Manage" asp-action="AddPhoneNumber">Change</a>&nbsp;&nbsp;]</text>
+                    <text>[<a role="button" asp-controller="Manage" asp-action="AddPhoneNumber" class="mdl-button mdl-js-button">Change</a>]</text>
                     <form asp-controller="Manage" asp-action="RemovePhoneNumber" method="post" role="form">
-                        [<button type="submit" class="btn-link">Remove</button>]
+                        [<button type="submit" class="mdl-button mdl-js-button">Remove</button>]
                     </form>
                 }
                 else
                 {
-                    <text>[&nbsp;&nbsp;<a asp-controller="Manage" asp-action="AddPhoneNumber">Add</a>&nbsp;&nbsp;]</text>
+                    <text>[<a role="button" asp-controller="Manage" asp-action="AddPhoneNumber" class="mdl-button mdl-js-button">Add</a>]</text>
                 }
-        </dd>
+            </dd>
 
-        <dt>Two-Factor Authentication:</dt>
-        <dd>
-            <p>
-                There are no two-factor authentication providers configured. See <a href="http://go.microsoft.com/fwlink/?LinkID=532713">this article</a>
-                for setting up this application to support two-factor authentication.
-            </p>
-            @if (Model.TwoFactor)
+            <dt>Two-Factor Authentication:</dt>
+            <dd>
+                <p>
+                    There are no two-factor authentication providers configured. See <a href="http://go.microsoft.com/fwlink/?LinkID=532713">this article</a>
+                    for setting up this application to support two-factor authentication.
+                </p>
+                @if (Model.TwoFactor)
                 {
-                    <form asp-controller="Manage" asp-action="DisableTwoFactorAuthentication" method="post" class="form-horizontal" role="form">
-                        Enabled [<button type="submit" class="btn-link">Disable</button>]
+                    <form asp-controller="Manage" asp-action="DisableTwoFactorAuthentication" method="post" role="form">
+                        <button type="submit" class="mdl-button mdl-js-button" disabled>Enabled</button> [ <button type="submit" class="mdl-button mdl-js-button">Disable</button> ]
                     </form>
                 }
                 else
                 {
-                    <form asp-controller="Manage" asp-action="EnableTwoFactorAuthentication" method="post" class="form-horizontal" role="form">
-                        [<button type="submit" class="btn-link">Enable</button>] Disabled
+                    <form asp-controller="Manage" asp-action="EnableTwoFactorAuthentication" method="post" role="form">
+                        [ <button type="submit" class="mdl-button mdl-js-button">Enable</button> ] <button type="submit" class="mdl-button mdl-js-button" disabled>Disabled</button>
                     </form>
                 }
-        </dd>
-    </dl>
+            </dd>
+        </dl>
+    </div>
 </div>
