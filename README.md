@@ -63,7 +63,9 @@ bower install
 
 ## Blockers
 
+1. Selects in MDL:
 https://github.com/google/material-design-lite/issues/854
+2. TODO: verify SendGrid crashing on OS X.
 
 ## Screenshots
 
