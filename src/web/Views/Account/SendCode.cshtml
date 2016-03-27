@@ -17,10 +17,10 @@
                     </div>
                     <div class="mdl-card__supporting-text" style="min-height: 50px;">
                         <div>
-                            <!-- no built-in class for select in MDL -->
-                            <select asp-for="SelectedProvider" asp-items="Model.Providers"></select>
+                            @* NOTE: Select via mdl-selectfield *@
+                            <label for="SelectProvider">Provider</label>
+                            <select asp-for="SelectedProvider" asp-items="Model.Providers" class="mdl-selectfield__select"></select>
                         </div>
-
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                         <button type="submit" class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect mdl-button--primary">Submit</button>
